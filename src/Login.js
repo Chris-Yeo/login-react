@@ -7,7 +7,7 @@ import './Login.css';
 const Login = () => {
   const [dataLoginGoogle, setDataLoginGoogle] = useState();
   const [statusLogin, setStatusLogin] = useState(false);
-  // const [dataLoginFacebook, setDataLoginFacebook] = useState();
+  const [dataLoginFacebook, setDataLoginFacebook] = useState();
 
   //Arrow function
   const responseGoogle = (response) => {
@@ -18,15 +18,16 @@ const Login = () => {
     setStatusLogin(true);
   }
 
-  //Arrow function
-  // const responseFacebook = (response) => {
-  //   setDataLoginFacebook(response.profileObj);
-  //   console.log(response.profileObj)
-  //   localStorage.setItem('name', response.profileObj.givenName);
-  //   localStorage.setItem('email', response.profileObj.email);
-  //   localStorage.setItem('image', response.profileObj.imageUrl);
-  //   setStatusLogin(true);
-  // }
+  // Arrow function
+  const responseFacebook = (response) => {
+    console.log(response)
+    setDataLoginFacebook(response);
+    console.log(response)
+    localStorage.setItem('nameFacebook', response.name);
+    localStorage.setItem('emailFacebook', response.email);
+    localStorage.setItem('imageFacebook', response.picture.data.url);
+    setStatusLogin(true);
+  }
 
   const componentClicked = () => {
     console.log( "Clicked!" )
@@ -43,14 +44,14 @@ const Login = () => {
             cookiePolicy={'single_host_origin'}
           />
          </div>
-         {/* < div className="facebook">
+         < div className="facebook">
               <FacebookLogin
               appId="586211698731249"
               autoLoad={true}
               fields="name,email,picture"
               onClick={componentClicked}
               callback={responseFacebook} />
-          </div> */}
+          </div>
 
         {
           statusLogin ? (
