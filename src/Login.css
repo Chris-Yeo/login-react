@@ -1,0 +1,12 @@
+.content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 1px;
+    align-items: center;
+  }
+  
+  .google {
+    margin-bottom: 30px;
+  }

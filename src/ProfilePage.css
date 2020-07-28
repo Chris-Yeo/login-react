@@ -1,0 +1,15 @@
+.profile {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.profile img {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.this {
+    padding-top: 15px;
+}
